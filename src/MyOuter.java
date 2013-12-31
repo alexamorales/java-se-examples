@@ -20,6 +20,7 @@ public class MyOuter {
             System.out.println("Outer class ref is " + MyOuter.this);
         }
     }
+
     //Local inner class
     public void localInnerClass(final int i) {
         final String string = "LocalInner: ";
@@ -36,14 +37,14 @@ public class MyOuter {
 //     Anonymous inner class refer to Popcorn class
 
 
-
-
-//    Static nested class
+    //    Static nested class
     private static class StaticNestedClass {
 
+        void inStaticNested() {
+            System.out.println("Hi from static nested");
+        }
 
     }
-
 
     public static void main(String[] args) {
         // Regular inner instantiation and methods call
@@ -54,11 +55,12 @@ public class MyOuter {
 
         MyOuter.MyInner myInner1 = new MyOuter().new MyInner();
         myInner1.seeOuter();
-        //Call local inner class
+        //Call for local inner class
 
         outer.localInnerClass(6);
-
-
+        //Call for static nested
+        MyOuter.StaticNestedClass staticNestedClass = new MyOuter.StaticNestedClass();
+        staticNestedClass.inStaticNested();
 
     }
 
