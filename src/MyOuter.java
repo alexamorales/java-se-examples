@@ -20,7 +20,7 @@ public class MyOuter {
             System.out.println("Outer class ref is " + MyOuter.this);
         }
     }
-
+    //Local inner class
     public void localInnerClass(final int i) {
         final String string = "LocalInner: ";
 
@@ -33,7 +33,12 @@ public class MyOuter {
         localInner.seeLocalParameter();
     }
 
+//     Anonymous inner class refer to Popcorn class
 
+
+
+
+//    Static nested class
     private static class StaticNestedClass {
 
 
@@ -52,6 +57,7 @@ public class MyOuter {
         //Call local inner class
 
         outer.localInnerClass(6);
+
 
 
     }
