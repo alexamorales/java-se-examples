@@ -33,6 +33,5 @@ public class Multithreading implements Runnable {
         thread1.join();
 
         thread2.start();*/
-
     }
 }
