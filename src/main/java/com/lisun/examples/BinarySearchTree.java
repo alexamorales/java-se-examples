@@ -1,3 +1,5 @@
+package com.lisun.examples;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Oleksii.Lisun

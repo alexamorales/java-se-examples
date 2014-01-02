@@ -1,3 +1,5 @@
+package com.lisun.examples;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Oleksii.Lisun
@@ -34,7 +36,7 @@ public class MyOuter {
         localInner.seeLocalParameter();
     }
 
-//     Anonymous inner class refer to Popcorn class
+//     Anonymous inner class refer to test.folder.Popcorn class
 
 
     //    Static nested class

@@ -1,3 +1,5 @@
+package com.lisun.examples;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Oleksii.Lisun
@@ -40,19 +42,9 @@ public class ThreadsRunner {
         Thread thread1 = new Thread(new ThreadRunnable());
         Thread thread2 = new Thread(new ThreadRunnable());
 
-        TestThread thread3 = new TestThread();
-        TestThread thread4 = new TestThread();
         thread1.start();
+        thread1.join();
         thread2.start();
-        thread3.start();
-        thread4.start();
-
-        for (int i = 0; i < 10; i++) {
-            Thread.sleep(1000);
-            System.out.println(Thread.currentThread().getName() + "i: " + i);
-
-        }
-
     }
 
 
