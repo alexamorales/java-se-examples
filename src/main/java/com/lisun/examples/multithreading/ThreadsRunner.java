@@ -1,4 +1,4 @@
-package com.lisun.examples;
+package com.lisun.examples.multithreading;
 
 /**
  * Created with IntelliJ IDEA.

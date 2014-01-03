@@ -1,4 +1,4 @@
-package com.lisun.examples;
+package com.lisun.examples.oop;
 
 /**
  * Created with IntelliJ IDEA.
@@ -6,6 +6,7 @@ package com.lisun.examples;
  * Date: 10/16/13
  * Time: 5:52 PM
  */
-public class Dog extends Animal {
+public class Animal {
+    private static int globalName;
     int id;
 }

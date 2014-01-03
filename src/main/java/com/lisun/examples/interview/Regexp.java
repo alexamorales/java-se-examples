@@ -1,4 +1,7 @@
-package com.lisun.examples;
+package com.lisun.examples.interview;
+
+import com.lisun.examples.oop.Animal;
+import com.lisun.examples.oop.Dog;
 
 import java.util.*;
 import java.util.regex.Matcher;

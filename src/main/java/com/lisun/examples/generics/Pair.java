@@ -1,4 +1,6 @@
-package com.lisun.examples;
+package com.lisun.examples.generics;
+
+import com.lisun.examples.oop.Box;
 
 import java.util.*;
 
@@ -46,7 +48,7 @@ public class Pair<K, V> {
 
         boolean result = Generic.compare(pair1, pair2);
 
-        Box<Integer> box = new Box<Integer>();
+        Box<Integer> box = new Box<>();
 
         box.setT(2);
 
@@ -58,7 +60,7 @@ public class Pair<K, V> {
         String[] strings1 = new String[10];
         strings1[0] = "1";
 
-        Map<byte[], Integer> map = new HashMap<byte[], Integer>();
+        Map<byte[], Integer> map = new HashMap<>();
 
 
 
