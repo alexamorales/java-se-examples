@@ -19,6 +19,10 @@ public class PrimitiveTypeNarrowing {
 
         System.out.println(dd3);
         showNumbers((short) 9, (short) 10);
+
+        float floatNumber = 45 / 21.0f;
+        System.out.println(floatNumber);
+
     }
 
     private static int showNumbers(byte i, int k) {
