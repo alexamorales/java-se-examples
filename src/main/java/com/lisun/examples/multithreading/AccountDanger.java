@@ -31,11 +31,11 @@ public class AccountDanger implements Runnable {
         }
     }
 
-    /*
-    * <p>Make withdrawal from bank account</p>
-    *
-    * @param amount of withdrawal sum
-    * */
+    /**
+     * <p> Make withdrawal from bank account</p>
+     *
+     * @param amount of withdrawal sum
+     */
     private synchronized void makeWithdrawal(int amount) {
         if (account.getBalance() >= amount) {
             System.out.println(Thread.currentThread().getName() + " is going to withdraw");

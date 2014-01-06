@@ -23,6 +23,7 @@ public class PrimitiveTypeNarrowing {
         float floatNumber = 45 / 21.0f;
         System.out.println(floatNumber);
 
+        System.out.println('b' + 'c'); // sum of two chars is int
     }
 
     private static int showNumbers(byte i, int k) {
