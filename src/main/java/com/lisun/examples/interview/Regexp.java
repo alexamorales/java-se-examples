@@ -3,7 +3,9 @@ package com.lisun.examples.interview;
 import com.lisun.examples.oop.Animal;
 import com.lisun.examples.oop.Dog;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,10 +19,11 @@ public class Regexp {
     private int one = 1;
 
     static class Nested {
-      public void go(){
-          System.out.println("dffd");
-      }
+        public void go() {
+            System.out.println("dffd");
+        }
     }
+
     public void sort(int[] arr) {
 
         for (int i = arr.length - 1; i > 1; i--) {
@@ -86,7 +89,6 @@ public class Regexp {
         ArrayList<Animal> animals = new ArrayList<>();
 
         regexp.addAnimal(animals, dogs);
-
 
     }
 }
