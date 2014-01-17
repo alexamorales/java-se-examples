@@ -6,16 +6,31 @@ package com.lisun.examples.singleton;
  *        Time: 12:51 PM
  */
 public enum SingletonEnum {
+
     INSTANCE("Name", 1);
 
-    private SingletonEnum(String name, int ordinal) {
+    private String name;
+    private int position;
 
+
+    SingletonEnum(String name, int position) {
+        this.name = name;
+        this.position = position;
     }
 
-    @Override
-    public String toString() {
-        return INSTANCE.name();
+    public String getName() {
+        return name;
     }
 
+}
+
+class EnumTest {
+    SingletonEnum enumerated = SingletonEnum.INSTANCE;
+
+    public static void main(String[] args) {
+        final EnumTest enumTest = new EnumTest();
+
+        enumTest.enumerated.getName();
+    }
 
 }

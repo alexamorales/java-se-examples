@@ -21,7 +21,7 @@ class ThreadRunnable implements Runnable {
     }
 }
 
-class TestThread extends Thread  {
+class TestThread extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
@@ -42,6 +42,7 @@ public class ThreadsRunner {
         Thread thread1 = new Thread(new ThreadRunnable());
         Thread thread2 = new Thread(new ThreadRunnable());
 
+        thread1.setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
         thread1.start();
         thread1.join();
         thread2.start();

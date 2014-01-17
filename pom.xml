@@ -34,11 +34,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!--<resources>
-            <resource>
-                <excludes></excludes>
-            </resource>
-        </resources>-->
     </build>
 
 </project>
