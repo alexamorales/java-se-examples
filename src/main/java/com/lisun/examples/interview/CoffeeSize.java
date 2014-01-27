@@ -41,9 +41,7 @@ class CoffeeTestTest {
         System.out.println(coffee2.size.getMl());
 
         for (Coffee2.CofeeSize cs : Coffee2.CofeeSize.values()) {
-            System.out.println("cs: " + cs.getMl() + " " + cs);
+            System.out.println(cs + " cs: " + cs.getMl());
         }
-
-
     }
 }

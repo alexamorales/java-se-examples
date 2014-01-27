@@ -3,17 +3,17 @@ package com.lisun.examples.singleton;
 /**
  * @author Oleksii.Lisun
  * @since 1/3/14
- *        Time: 12:51 PM
+ * Time: 12:51 PM
  */
 public enum SingletonEnum {
 
-    INSTANCE("Name", 1);
+    ERROR(1, "Description");
 
     private String name;
     private int position;
 
 
-    SingletonEnum(String name, int position) {
+    SingletonEnum(int position, String name) {
         this.name = name;
         this.position = position;
     }
@@ -25,12 +25,12 @@ public enum SingletonEnum {
 }
 
 class EnumTest {
-    SingletonEnum enumerated = SingletonEnum.INSTANCE;
+    SingletonEnum enumerated = SingletonEnum.ERROR;
 
     public static void main(String[] args) {
         final EnumTest enumTest = new EnumTest();
 
-        enumTest.enumerated.getName();
+        System.out.println(enumTest.enumerated.getName());
     }
 
 }

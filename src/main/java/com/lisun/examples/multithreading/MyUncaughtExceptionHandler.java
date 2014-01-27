@@ -3,7 +3,7 @@ package com.lisun.examples.multithreading;
 /**
  * @author Oleksii.Lisun
  * @since 1/15/14
- *        Time: 4:29 PM
+ * Time: 4:29 PM
  */
 public class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     @Override
