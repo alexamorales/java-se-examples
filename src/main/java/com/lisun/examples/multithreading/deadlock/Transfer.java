@@ -30,13 +30,13 @@ public class Transfer implements Callable<Boolean> {
     @Override
     public Boolean call() throws InsufficientFundsException, InterruptedException {
         if (accountFrom.getLock().tryLock(WAIT_SEC, TimeUnit.SECONDS)) {
+            System.out.println("Start transfer with id: " + id);
             try {
                 if (accountFrom.getBalance() < amount) {
                     throw new InsufficientFundsException();
                 }
                 if (accountTo.getLock().tryLock(WAIT_SEC, TimeUnit.SECONDS)) {
                     try {
-                        System.out.println("Start transfer with id: " + id);
                         accountFrom.withdraw(amount);
                         accountTo.deposit(amount);
                         Thread.sleep(new Random().nextInt(5000));

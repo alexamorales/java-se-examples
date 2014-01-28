@@ -6,6 +6,6 @@ package com.lisun.examples.multithreading.exceptions;
  */
 public class InsufficientFundsException extends Exception {
     public InsufficientFundsException() {
-        super("Account has negative balance");
+        super("Deposit is bigger than amount");
     }
 }
