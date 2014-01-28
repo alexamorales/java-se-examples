@@ -1,10 +1,8 @@
 package com.lisun.examples.multithreading.deadlock;
 
+import java.util.Arrays;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /**
  * @author Oleksii.Lisun
@@ -12,6 +10,9 @@ import java.util.concurrent.Future;
  * Time: 5:42 PM
  */
 public class Operations {
+
+    public static final int SIZE = 10;
+
     public static void main(String[] args) throws InterruptedException {
 
         final Random random = new Random();
@@ -19,10 +20,17 @@ public class Operations {
         final Account acc1 = new Account(1000);
         final Account acc2 = new Account(1000);
 
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        final boolean[] arr = new boolean[10];
+        Executors.newScheduledThreadPool(1).scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Number of fails: " + acc1.getFailCounter());
+            }
+        }, 1, 1, TimeUnit.SECONDS);
 
-        for (int i = 0; i < 10; i++) {
+        ExecutorService service = Executors.newFixedThreadPool(3);
+        final boolean[] arr = new boolean[SIZE];
+
+        for (int i = 0; i < SIZE; i++) {
             Future<Boolean> result = service.submit(
                     new Transfer(acc1, acc2, random.nextInt(400), i)
             );
@@ -35,6 +43,6 @@ public class Operations {
 
         service.shutdown();
 
-
+        Arrays.toString(arr);
     }
 }

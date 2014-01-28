@@ -51,7 +51,6 @@ public class Transfer implements Callable<Boolean> {
         } else {
             accountFrom.incrementFailTransferCounter();
             accountTo.incrementFailTransferCounter();
-
             return false;
         }
     }
