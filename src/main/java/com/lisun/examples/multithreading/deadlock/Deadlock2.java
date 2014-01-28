@@ -1,31 +1,41 @@
 package com.lisun.examples.multithreading.deadlock;
 
+import com.lisun.examples.multithreading.exceptions.InsufficientFundsException;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author Aleksey
  * @since 1/26/14
  */
 public class Deadlock2 {
 
-    static void transfer(Account acc1, Account acc2, int amount) {
+    static void transfer(Account acc1, Account acc2, int amount) throws InterruptedException, InsufficientFundsException {
+
         if (acc1.getBalance() < 0) {
             throw new InsufficientFundsException();
         }
-        synchronized (acc1) {
-            System.out.println("In 1st synchronized block: " + Thread.currentThread().getName());
+        if (acc1.getLock().tryLock(5, TimeUnit.SECONDS)) {
             try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                if (acc2.getLock().tryLock(5, TimeUnit.SECONDS)) {
+                    try {
+                        acc1.withdraw(amount);
+                        acc2.deposit(amount);
+                    } finally {
+                        acc2.getLock().unlock();
+                    }
+                }
+            } finally {
+                acc1.getLock().unlock();
             }
-            synchronized (acc2) {
-                System.out.println("In 2nd synchronized block: " + Thread.currentThread().getName());
-                acc1.withdraw(amount);
-                acc2.deposit(amount);
-            }
+
+        } else {
+            acc1.incrementFailTransferCounter();
+            acc2.incrementFailTransferCounter();
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         final Account acc1 = new Account(1000);
         final Account acc2 = new Account(500);
@@ -33,33 +43,19 @@ public class Deadlock2 {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                transfer(acc2, acc1, 1000);
+                try {
+                    transfer(acc2, acc1, 1000);
+                } catch (InterruptedException | InsufficientFundsException e) {
+                    e.printStackTrace();
+                }
             }
         }).start();
 
-        transfer(acc2, acc1, 500);
+        try {
+            transfer(acc2, acc1, 500);
+        } catch (InsufficientFundsException e) {
+            e.printStackTrace();
+        }
     }
 }
 
-class Account {
-    int balance;
-
-    public int getBalance() {
-        return balance;
-    }
-
-    Account(int balance) {
-        this.balance = balance;
-    }
-
-    public void withdraw(int amount) {
-        balance -= amount;
-        System.out.println(balance + " :after withdraw");
-    }
-
-    public void deposit(int amount) {
-        balance += amount;
-        System.out.println(balance + " after deposit");
-    }
-
-}

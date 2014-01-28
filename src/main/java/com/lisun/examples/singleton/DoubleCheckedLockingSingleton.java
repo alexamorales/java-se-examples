@@ -2,8 +2,8 @@ package com.lisun.examples.singleton;
 
 /**
  * @author Oleksii.Lisun
- * @since 1/3/14
  * @see http://habrahabr.ru/post/129494/
+ * @since 1/3/14
  */
 public final class DoubleCheckedLockingSingleton {
     private static volatile DoubleCheckedLockingSingleton instance;
