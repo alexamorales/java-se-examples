@@ -4,6 +4,7 @@ import com.lisun.examples.multithreading.exceptions.InsufficientFundsException;
 
 import java.util.Random;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -18,17 +19,21 @@ public class Transfer implements Callable<Boolean> {
     private Account accountTo;
     private int amount;
     private int id;
+    private CountDownLatch startLatch;
 
-    public Transfer(Account accountFrom, Account accountTo, int amount, int id) {
+    public Transfer(Account accountFrom, Account accountTo, int amount, int id, CountDownLatch startLatch) {
         this.accountFrom = accountFrom;
         this.accountTo = accountTo;
         this.amount = amount;
         this.id = id;
+        this.startLatch = startLatch;
 
     }
 
     @Override
     public Boolean call() throws InsufficientFundsException, InterruptedException {
+        System.out.println("Waiting to start");
+        startLatch.await();
         if (accountFrom.getLock().tryLock(WAIT_SEC, TimeUnit.SECONDS)) {
             System.out.println("Start transfer with id: " + id);
             try {
@@ -43,6 +48,10 @@ public class Transfer implements Callable<Boolean> {
                     } finally {
                         accountTo.getLock().unlock();
                     }
+                } else {
+                    accountFrom.incrementFailTransferCounter();
+                    accountTo.incrementFailTransferCounter();
+                    return false;
                 }
             } finally {
                 accountFrom.getLock().unlock();
@@ -55,7 +64,4 @@ public class Transfer implements Callable<Boolean> {
         }
     }
 
-    public int getId() {
-        return id;
-    }
 }
