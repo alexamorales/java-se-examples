@@ -24,13 +24,3 @@ public enum SingletonEnum {
 
 }
 
-class EnumTest {
-    SingletonEnum enumerated = SingletonEnum.ERROR;
-
-    public static void main(String[] args) {
-        final EnumTest enumTest = new EnumTest();
-
-        System.out.println(enumTest.enumerated.getName());
-    }
-
-}
