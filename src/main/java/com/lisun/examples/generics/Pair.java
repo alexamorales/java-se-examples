@@ -1,8 +1,9 @@
 package com.lisun.examples.generics;
 
-import com.lisun.examples.oop.Box;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,7 +37,7 @@ public class Pair<K, V> {
     }
 
 
-    public static Object dffd(ArrayList<? super Integer> o){
+    public static Object dffd(ArrayList<? super Integer> o) {
         o.add(34);
         return o;
     }
@@ -63,14 +64,11 @@ public class Pair<K, V> {
         Map<byte[], Integer> map = new HashMap<>();
 
 
-
         System.out.println(map.get(strings1));
 
         System.out.println(Arrays.hashCode(strings) == Arrays.hashCode(strings1));
 
         dffd(new ArrayList<Integer>());
-
-
 
 
     }

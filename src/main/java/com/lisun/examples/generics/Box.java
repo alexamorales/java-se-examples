@@ -1,4 +1,4 @@
-package com.lisun.examples.oop;
+package com.lisun.examples.generics;
 
 /**
  * Created with IntelliJ IDEA.
