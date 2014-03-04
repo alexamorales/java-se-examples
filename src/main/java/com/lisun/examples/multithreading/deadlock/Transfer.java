@@ -2,7 +2,6 @@ package com.lisun.examples.multithreading.deadlock;
 
 import com.lisun.examples.multithreading.exceptions.InsufficientFundsException;
 
-import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Transfer implements Callable<Boolean> {
 
-    public static final int WAIT_SEC = 3;
+    private static final int WAIT_SEC = 1;
     private Account accountFrom;
     private Account accountTo;
     private int amount;
@@ -44,7 +43,7 @@ public class Transfer implements Callable<Boolean> {
                     try {
                         accountFrom.withdraw(amount);
                         accountTo.deposit(amount);
-                        Thread.sleep(new Random().nextInt(5000));
+                        Thread.sleep(5000);
                     } finally {
                         accountTo.getLock().unlock();
                     }

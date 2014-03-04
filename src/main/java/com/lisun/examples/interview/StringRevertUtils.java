@@ -5,6 +5,7 @@ package com.lisun.examples.interview;
  * @since 1/28/14
  */
 public class StringRevertUtils {
+
     public static String revertString(String str) {
         String revertedString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
@@ -25,7 +26,6 @@ public class StringRevertUtils {
 
         return new String(arr);
     }
-
 
     public static void main(String[] args) {
         System.out.println(revertString("abcd"));

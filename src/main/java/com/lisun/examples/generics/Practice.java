@@ -1,18 +1,26 @@
 package com.lisun.examples.generics;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Aleksey
+ * @author Oleksii.Lisun
  * @since 2/5/14
+ * Time: 6:24 PM
  */
 public class Practice {
     public static void main(String[] args) {
-        List<String> stringList = new ArrayList<>();
-        stringList.add("String");
+        List raw = new ArrayList();
+        List<String> list = new ArrayList<>();
 
-        SomeType<Integer> someType = new SomeType<>();
-        someType.test(stringList);
+        List<String> listString = Arrays.asList("string");
+        raw = list;
+
+
+        SomeType<?> rawType = new SomeType();
+        rawType.test(listString);
+
+
     }
 }

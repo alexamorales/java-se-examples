@@ -14,6 +14,9 @@ class ThreadRunnable implements Runnable {
             try {
                 Thread.sleep(1000);
                 System.out.println(Thread.currentThread().getName() + " " + this.getClass().getName() + "i: " + i);
+
+                throw new RuntimeException();
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -3,7 +3,7 @@ package com.lisun.examples.multithreading;
 /**
  * @author Oleksii.Lisun
  * @since 1/6/14
- *        Time: 11:47 AM
+ * Time: 11:47 AM
  */
 public class AccountDanger implements Runnable {
     private Account account = new Account();

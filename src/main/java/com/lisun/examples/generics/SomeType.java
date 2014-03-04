@@ -4,8 +4,9 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author Aleksey
+ * @author Oleksii.Lisun
  * @since 2/5/14
+ * Time: 6:40 PM
  */
 public class SomeType<T> {
     public <E> void test(Collection<E> collection) {

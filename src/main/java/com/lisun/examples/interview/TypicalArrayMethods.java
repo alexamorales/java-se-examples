@@ -3,7 +3,7 @@ package com.lisun.examples.interview;
 /**
  * @author Oleksii.Lisun
  * @since 1/6/14
- *        Time: 5:33 PM
+ * Time: 5:33 PM
  */
 public class TypicalArrayMethods {
     public static int maxElementInArray(int arr[]) {

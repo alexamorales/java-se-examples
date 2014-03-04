@@ -10,6 +10,7 @@
     <name>Java SE (Samples)</name>
 
     <!--dependecies-->
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -21,8 +22,17 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.12.4</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
     <!--plugins-->
+
     <build>
         <plugins>
             <plugin>

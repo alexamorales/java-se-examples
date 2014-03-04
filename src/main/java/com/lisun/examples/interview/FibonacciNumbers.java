@@ -7,7 +7,7 @@ package com.lisun.examples.interview;
  */
 public class FibonacciNumbers {
 
-    static int cache[] = new int[1000];
+    private static int cache[] = new int[1000];
 
     public long sum(int n) {
         long sum = 0;

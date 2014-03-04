@@ -3,10 +3,11 @@ package com.lisun.examples.interview;
 /**
  * @author Oleksii.Lisun
  * @since 1/3/14
- *        Time: 4:05 PM
+ * Time: 4:05 PM
  */
 public class PrimitiveTypeNarrowing {
     public static void main(String[] args) {
+
         double a = 5.0;
         double b = 3.0;
 
