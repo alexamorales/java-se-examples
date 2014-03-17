@@ -11,7 +11,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ReentrantLockingDemo {
 
-
     final Lock lock = new ReentrantLock();
 
     public static void main(String[] args) {
@@ -51,7 +50,6 @@ public class ReentrantLockingDemo {
                                     + " will re try again");
                         }
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 } while (true);

@@ -4,7 +4,7 @@ package com.lisun.examples.generics.container;
  * @author Aleksey
  * @since 2/5/14
  */
-public class Camera extends Product implements Comparable<Camera> {
+public class Camera implements Comparable<Camera> {
     private Integer pixel;
 
     public Integer getPixel() {

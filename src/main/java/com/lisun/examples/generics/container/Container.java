@@ -1,17 +1,15 @@
 package com.lisun.examples.generics.container;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author Aleksey
  * @since 2/5/14
  */
-public class Container<T extends Product & Comparable<T>> {
+@Setter
+@Getter
+public class Container<T extends Comparable<T>> {
     private T item;
 
-    public T getItem() {
-        return item;
-    }
-
-    public void setItem(T item) {
-        this.item = item;
-    }
 }

@@ -9,6 +9,7 @@ import java.util.List;
  * Time: 6:40 PM
  */
 public class SomeType<T> {
+
     public <E> void test(Collection<E> collection) {
         for (E e : collection) {
             System.out.println(e);
@@ -20,4 +21,5 @@ public class SomeType<T> {
             System.out.println(integer);
         }
     }
+
 }
