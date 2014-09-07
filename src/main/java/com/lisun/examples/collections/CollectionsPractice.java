@@ -9,6 +9,17 @@ import java.util.*;
  */
 public class CollectionsPractice {
     public static void main(String[] args) {
+
+        Person person = new Person();
+
+
+        TreeMap<Person, String> map2 = new TreeMap<>();
+
+        map2.put(person, "dfdf");
+
+
+        System.out.println(map2);
+
         Set<Integer> hashSet = new TreeSet<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {

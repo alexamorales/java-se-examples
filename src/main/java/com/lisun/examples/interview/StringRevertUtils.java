@@ -7,11 +7,11 @@ package com.lisun.examples.interview;
 public class StringRevertUtils {
 
     public static String revertString(String str) {
-        String revertedString = "";
+        StringBuilder revertedString = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
-            revertedString += str.charAt(i);
+            revertedString.append(str.charAt(i));
         }
-        return revertedString;
+        return revertedString.toString();
     }
 
     public static String revertedWithChar(String str) {

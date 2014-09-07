@@ -23,11 +23,21 @@ public class LambdaTest {
 
         Converter<String, Integer> converterWithMethodReference = Integer::valueOf;
 
+        try {
+            converterWithMethodReference.convert("6578hgghgh");
+        } catch (Exception e) {
+            System.out.println("Number is incorrect");
+            e.printStackTrace();
+        } finally {
+            System.out.println("Finally block");
+        }
+
         System.out.println(converter.convert("23"));
 
         Converter<Integer, String> lambda = a -> String.valueOf(a);
 
         System.out.println(lambda.convert(34));
+
 
         final Runnable runnable;
         runnable = () -> {
@@ -44,8 +54,6 @@ public class LambdaTest {
         Predicate<Object> nonNull = Objects::nonNull;
 
         System.out.println(nonNull.test(predicate));
-
-
 
 
     }

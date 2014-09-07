@@ -19,4 +19,16 @@ public class Camera implements Comparable<Camera> {
     public int compareTo(Camera o) {
         return (o.getPixel()).compareTo(this.getPixel());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Camera camera = (Camera) o;
+
+        return !(pixel != null ? !pixel.equals(camera.pixel) : camera.pixel != null);
+
+    }
+
 }
