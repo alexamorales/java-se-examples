@@ -3,6 +3,7 @@ package com.lisun.examples.lambdas;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
@@ -13,6 +14,8 @@ import java.util.function.Predicate;
 public class LambdaTest {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("peter", "maria", "mike", "hanna");
+
+        names.stream().forEach(a -> a.charAt(1));
 
         Collections.sort(names, (a, b) -> a.compareTo(b));
 
@@ -37,6 +40,13 @@ public class LambdaTest {
         Predicate<Integer> predicate = (p) -> p > 0;
         predicate.test(2); // true
         predicate.negate().test(34); //false
+
+        Predicate<Object> nonNull = Objects::nonNull;
+
+        System.out.println(nonNull.test(predicate));
+
+
+
 
     }
 }
