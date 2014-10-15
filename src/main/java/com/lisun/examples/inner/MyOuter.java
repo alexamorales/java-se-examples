@@ -15,6 +15,7 @@ public class MyOuter {
         inner.seeOuter();
     }
 
+    // Regular inner class
     private class MyInner {
         public void seeOuter() {
             System.out.println("Outer x is: " + x);

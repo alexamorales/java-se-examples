@@ -20,6 +20,7 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -29,7 +30,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.12.4</version>
+            <version>1.14.6</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
