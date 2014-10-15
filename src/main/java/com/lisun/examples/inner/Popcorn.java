@@ -13,16 +13,24 @@ public class Popcorn {
 }
 
 class Food {
-    Popcorn p = new Popcorn() {
-        @Override
-        public void pop() {
-            System.out.println("anonymous popcorn");
-        }
+    public static void main(String[] args) {
+        int a = 2;
 
-        public void sizzle() {
-            System.out.println("anonymous sizzling popcorn");
-        }
-    };
+        Popcorn p = new Popcorn() {
+            @Override
+            public void pop() {
+                System.out.println("anonymous popcorn" + a);
+            }
+
+            public void sizzle() {
+                System.out.println("anonymous sizzling popcorn");
+            }
+        };
+
+        p.pop();
+
+
+    }
 
 
 }

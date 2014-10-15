@@ -5,6 +5,7 @@ import com.lisun.examples.oop.Dog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -89,6 +90,10 @@ public class Regexp {
         ArrayList<Animal> animals = new ArrayList<>();
 
         regexp.addAnimal(animals, dogs);
+
+        List<Object> numbers = new LinkedList<>();
+
+        regexp.addAnimal(numbers, dogs);
 
     }
 }

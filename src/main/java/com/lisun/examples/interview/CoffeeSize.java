@@ -32,6 +32,7 @@ class Coffee2 {
 }
 
 class CoffeeTestTest {
+
     public static void main(String[] args) {
         Coffee drink = new Coffee();
         drink.size = CoffeeSize.BIG;
