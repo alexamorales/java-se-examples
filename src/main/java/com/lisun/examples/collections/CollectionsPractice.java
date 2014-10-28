@@ -76,13 +76,13 @@ public class CollectionsPractice {
 
         return set.higher(element);
 
-        /*Iterator iterator = set.iterator();
+        /*Iterator<Integer> iterator = set.iterator();
         Integer result = null;
 
         while (iterator.hasNext()) {
-            int next = (int) iterator.next();
-            if ((element) == next) {
-                result = (int) iterator.next();
+            int next = iterator.next();
+            if (next == element && iterator.hasNext()) {
+                result = iterator.next();
                 break;
             }
         }
