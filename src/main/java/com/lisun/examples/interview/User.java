@@ -45,7 +45,7 @@ public class User {
             } else if (o1.stringList.size() > o2.stringList.size()) {
                 return 1;
             }
-            for (int i = 0; i < o1.stringList.size() - 1; i++) {
+            for (int i = 0; i < o1.stringList.size(); i++) {
                 if (o1.stringList.get(i).compareTo(o2.stringList.get(i)) != 0) {
                     return o1.stringList.get(i).compareTo(o2.stringList.get(i));
                 }
@@ -53,7 +53,6 @@ public class User {
             return 0;
         }
         );
-
 
         System.out.println(userList);
 
