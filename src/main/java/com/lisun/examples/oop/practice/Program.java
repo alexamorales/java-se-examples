@@ -1,4 +1,4 @@
-package com.lisun.examples.oop.paractise;
+package com.lisun.examples.oop.practice;
 
 import java.util.List;
 
