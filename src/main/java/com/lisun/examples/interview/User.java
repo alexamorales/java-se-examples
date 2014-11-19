@@ -39,24 +39,20 @@ public class User {
         userList.add(user1);
         userList.add(user2);
 
-        Collections.sort(userList, new Comparator<User>() {
-                    @Override
-                    public int compare(User o1, User o2) {
-                        if (o1.stringList.size() < o2.stringList.size()) {
-                            return -1;
-                        } else if (o1.stringList.size() > o2.stringList.size()) {
-                            return 1;
-                        }
-                        for (int i = 0; i < o1.stringList.size() - 1; i++) {
-                            if (o1.stringList.get(i).compareTo(o2.stringList.get(i)) != 0) {
-                                return o1.stringList.get(i).compareTo(o2.stringList.get(i));
-                            }
-                        }
-                        return 0;
-                    }
+        Collections.sort(userList, (o1, o2) -> {
+            if (o1.stringList.size() < o2.stringList.size()) {
+                return -1;
+            } else if (o1.stringList.size() > o2.stringList.size()) {
+                return 1;
+            }
+            for (int i = 0; i < o1.stringList.size(); i++) {
+                if (o1.stringList.get(i).compareTo(o2.stringList.get(i)) != 0) {
+                    return o1.stringList.get(i).compareTo(o2.stringList.get(i));
                 }
+            }
+            return 0;
+        }
         );
-
 
         System.out.println(userList);
 
