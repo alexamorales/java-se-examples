@@ -5,8 +5,8 @@ package com.lisun.examples.singleton;
  * @since 31.12.13
  */
 public class Singleton {
-    private Singleton() {
 
+    private Singleton() {
     }
 
     private static Singleton instance;
