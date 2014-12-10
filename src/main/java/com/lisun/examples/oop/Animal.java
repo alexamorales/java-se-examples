@@ -13,7 +13,7 @@ public class Animal implements Running {
 
     private int id;
 
-    public void exc() {
+    protected void exc() {
         System.out.println(id);
     }
 

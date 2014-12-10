@@ -5,7 +5,7 @@ package com.lisun.examples.multithreading.waitnotify;
  * @since 1/29/14
  */
 public class Notifier implements Runnable {
-    private Message message;
+    private final Message message;
 
     public Notifier(Message message) {
         this.message = message;
