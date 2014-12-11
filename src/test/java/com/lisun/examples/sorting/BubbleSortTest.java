@@ -10,10 +10,12 @@ public class BubbleSortTest {
 
     @Test
     public void shouldTestBubbleSort() throws Exception {
+        BubbleSort bubbleSort = new BubbleSort();
+
         int[] arrActual = {-2, 5, 6, 1, 10, 2, 1};
         int[] arrExpected = arrActual.clone();
 
-        BubbleSort.sort(arrActual);
+        bubbleSort.sort(arrActual);
         Arrays.sort(arrExpected);
 
         assertArrayEquals("Compare sorted arrays", arrExpected, arrActual);
