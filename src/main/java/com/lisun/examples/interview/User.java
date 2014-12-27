@@ -3,7 +3,10 @@ package com.lisun.examples.interview;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Oleksii.Lisun
@@ -24,10 +27,6 @@ public class User {
     }
 
     public static void main(String[] args) {
-
-
-
-
         User user1 = new User();
         User user2 = new User();
         user1.stringList = Arrays.asList("aa", "bb", "cc", "aa");
