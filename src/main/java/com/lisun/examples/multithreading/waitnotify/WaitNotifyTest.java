@@ -6,18 +6,11 @@ package com.lisun.examples.multithreading.waitnotify;
  */
 public class WaitNotifyTest {
     public static void main(String[] args) {
-        Message message = new Message("process it");
+        Message message = new Message("Process this message");
 
-        Waiter waiter = new Waiter(message);
-        new Thread(waiter, "Waiter").start();
+        new Thread(new Waiter(message)).start();
+        new Thread(new Notifier(message)).start();
 
 
-        Waiter waiter1 = new Waiter(message);
-        new Thread(waiter1, "Waiter1").start();
-
-        Notifier notifier = new Notifier(message);
-        new Thread(notifier, "First notifier ").start();
-
-        System.out.println("All threads are started");
     }
 }
