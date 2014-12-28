@@ -11,7 +11,6 @@ public class InsertionSort implements Sort {
     public void sort(int[] source) {
         for (int i = 1; i < source.length; i++) {
             int j = i;
-
             while (j > 0 && source[j] < source[j - 1]) {
                 swap(j, --j, source);
             }
