@@ -14,11 +14,11 @@ public class Notifier implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(4000);
             synchronized (message) {
                 String name = Thread.currentThread().getName();
-                System.out.println(name + "started");
-                message.setMessage(name + " Notifier work done");
+                System.out.println(name + " started");
+                message.setMessage(name + " notifier work done");
                 message.notifyAll();
             }
         } catch (InterruptedException e) {
