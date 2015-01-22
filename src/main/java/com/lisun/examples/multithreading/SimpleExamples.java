@@ -9,12 +9,15 @@ public class SimpleExamples {
     static class ThreadInner implements Runnable {
         @Override
         public void run() {
-            for (int i = 10; i > 0; i--) {
-                System.out.printf("Thread: %s " + i + "\n", Thread.currentThread().getName());
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+
+            while (true) {
+                for (int i = 10; i > 0; i--) {
+                    System.out.printf("Thread: %s " + i + "\n", Thread.currentThread().getName());
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
