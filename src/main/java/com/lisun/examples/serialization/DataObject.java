@@ -1,5 +1,6 @@
 package com.lisun.examples.serialization;
 
+import javax.xml.bind.annotation.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,14 +11,24 @@ import java.util.Arrays;
  * @author Alex
  * @since 23.01.2015
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "dataObj")
 public class DataObject extends NonSerializable implements Serializable {
     static final long serialVersionUID = 1L;
 
-    private transient CustomObject customObject = new CustomObject();
+    @XmlElement
+    private CustomObject customObject = new CustomObject();
 
-    private int i = 5;
+    @XmlAttribute(name = "identifier")
+    private int id = 5;
+
+    @XmlElement
     private String s = "aaa";
-    private transient String[] def = {"aaa", "bbb", "ccc"};
+
+    @XmlElement
+    @XmlElementWrapper(name = "strArr")
+    private String[] def = {"aaa", "bbb", "ccc"};
 
     private void writeObject(
             ObjectOutputStream out) throws IOException {
@@ -35,10 +46,10 @@ public class DataObject extends NonSerializable implements Serializable {
     @Override
     public String toString() {
         return "DataObject{" +
-                "\ncustomObject=" + customObject + "\n" +
-                " i=" + i + ",\n" +
-                " s='" + s + '\'' + ",\n" +
-                " def=" + Arrays.toString(def) +
+                "customObject=" + customObject +
+                ", id=" + id +
+                ", s='" + s + '\'' +
+                ", def=" + Arrays.toString(def) +
                 '}';
     }
 }
