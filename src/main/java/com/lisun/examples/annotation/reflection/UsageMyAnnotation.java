@@ -1,4 +1,4 @@
-package com.lisun.examples.annotation;
+package com.lisun.examples.annotation.reflection;
 
 import java.io.File;
 import java.io.FileInputStream;
