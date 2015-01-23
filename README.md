@@ -10,3 +10,5 @@ Simple Java SE examples for interviewing
 * Multithreading
 * OOP
 * Patterns
+* Serialization
+* Annotations/Reflection
