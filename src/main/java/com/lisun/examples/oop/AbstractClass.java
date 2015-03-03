@@ -6,23 +6,31 @@ package com.lisun.examples.oop;
  * Time: 6:24 PM
  */
 abstract class AbstractClass {
-    public AbstractClass(String regularString) {
-        this.regularString = regularString;
-    }
 
     public static final String CONSTANT = "Constant string";
 
     private String regularString = "Instance string";
 
-    public abstract void abstractMethod();
+    public AbstractClass(String regularString) {
+        this.regularString = regularString;
+    }
+
+    protected abstract void abstractMethod();
 
     public void regularMethod() {
         System.out.println("regular method");
-
     }
 
-    public static void showIntanceField() {
+   protected void showInstanceField() {
         System.out.println("Static method");
     }
 
+    public String getRegularString() {
+        System.out.println(regularString);
+        return regularString;
+    }
+
+    public void setRegularString(String regularString) {
+        this.regularString = regularString;
+    }
 }

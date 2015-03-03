@@ -8,6 +8,11 @@ package com.lisun.examples.oop;
 class Main {
     public static void main(String[] args) throws Exception {
 
+        AbstractClass inheritedClass = new InheritedClass("regularString");
 
+        inheritedClass.abstractMethod();
+        inheritedClass.regularMethod();
+
+        inheritedClass.showInstanceField();
     }
 }

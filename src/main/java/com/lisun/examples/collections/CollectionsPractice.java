@@ -20,12 +20,7 @@ public class CollectionsPractice {
 
         System.out.println(map2);
 
-        Set<Integer> hashSet = new TreeSet<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return 0;
-            }
-        });
+        Set<Integer> hashSet = new TreeSet<>((o1, o2) -> 0);
 
         hashSet.add(1);
         hashSet.add(2);

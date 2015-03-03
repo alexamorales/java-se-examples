@@ -8,8 +8,15 @@ package com.lisun.examples.interview;
 public class PrimitiveTypeNarrowing {
     public static void main(String[] args) {
 
+        // byte 8 -> short 16 -> int 32 -> long 64
+        // float 32 -> double 64
+
         double a = 5.0;
         double b = 3.0;
+
+        //java 7
+        int m = 1_000_000;
+
 
         System.out.println(a / b);
 
