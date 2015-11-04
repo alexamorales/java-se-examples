@@ -30,8 +30,6 @@ public class StringRevertUtils {
     public static void main(String[] args) {
         System.out.println(revertString("abcd"));
         System.out.println(revertedWithChar("abcd"));
-
-
     }
 
 

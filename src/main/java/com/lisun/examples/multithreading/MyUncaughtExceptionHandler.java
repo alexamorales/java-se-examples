@@ -8,7 +8,7 @@ package com.lisun.examples.multithreading;
 public class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     @Override
     public void uncaughtException(Thread t, Throwable e) {
-        System.out.println(t.getName() + "Exception: " + e.getMessage());
+        System.out.println(t.getName() + " Exception: " + e.getMessage());
 
     }
 }

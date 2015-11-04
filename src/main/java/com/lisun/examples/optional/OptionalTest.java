@@ -8,9 +8,8 @@ import java.util.function.Supplier;
  * @since 03.04.2015
  */
 public class OptionalTest {
+
     public static void main(String[] args) {
-
-
         ForTest forTest = new ForTest();
         forTest.setName("Alex2");
 

@@ -10,16 +10,16 @@ public class SimpleExamples {
         @Override
         public void run() {
 
-            while (true) {
-                for (int i = 10; i > 0; i--) {
-                    System.out.printf("Thread: %s " + i + "\n", Thread.currentThread().getName());
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+//            while (true) {
+//                for (int i = 10; i > 0; i--) {
+//                    System.out.printf("Thread: %s " + i + "\n", Thread.currentThread().getName());
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
         }
     }
 
@@ -29,10 +29,14 @@ public class SimpleExamples {
         Thread thread2 = new Thread(new ThreadInner());
 
 
+
         thread1.start();
+        System.out.println(thread1.getName());
         thread2.start();
+        System.out.println(thread2.getName());
         thread2.join();
 
+        System.out.println(Thread.currentThread().getName());
 
     }
 }

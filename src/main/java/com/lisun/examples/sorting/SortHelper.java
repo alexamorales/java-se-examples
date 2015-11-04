@@ -5,6 +5,7 @@ package com.lisun.examples.sorting;
  * @since 11.12.2014
  */
 public class SortHelper {
+
     private SortHelper() {
     }
 

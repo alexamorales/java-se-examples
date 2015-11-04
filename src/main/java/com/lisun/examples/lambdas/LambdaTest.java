@@ -25,7 +25,7 @@ public class LambdaTest {
 
         try {
             converterWithMethodReference.convert("6578hgghgh");
-        } catch (Exception e) {
+        } catch (Throwable e) {
             System.out.println("Number is incorrect");
             e.printStackTrace();
         } finally {

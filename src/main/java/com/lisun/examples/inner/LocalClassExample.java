@@ -12,11 +12,11 @@ public class LocalClassExample {
     public static void validatePhoneNumber(
             String phoneNumber1, String phoneNumber2) {
 
-        final int numberLength = 10;
+//        final int numberLength = 10;
 
         // Valid in JDK 8 and later:
 
-//        int numberLength = 10;
+        int numberLength = 10;
 
         class PhoneNumber {
 

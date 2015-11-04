@@ -33,7 +33,7 @@ class TestThread extends Thread {
             } catch (InterruptedException e) {
                 System.out.println("Interrupted");
             }
-            System.out.println(Thread.currentThread().getName() + " " + this.getClass().getName() + "i: " + i);
+            System.out.println(Thread.currentThread().getName() + " " + this.getClass().getName() + " i: " + i);
         }
     }
 }
