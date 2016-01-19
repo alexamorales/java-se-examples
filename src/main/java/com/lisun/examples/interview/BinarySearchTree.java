@@ -7,6 +7,7 @@ package com.lisun.examples.interview;
  * Time: 6:22 PM
  */
 public class BinarySearchTree<Key extends Comparable<Key>, Value> {
+
     private Node root;               // rooot of BST
 
     private class Node {

@@ -6,4 +6,11 @@ package com.lisun.examples.sorting;
  */
 public interface Sort {
     void sort(int[] source);
+
+    static void swap(int indexOne, int indexTwo, int[] arr) {
+        int temp = arr[indexOne];
+        arr[indexOne] = arr[indexTwo];
+        arr[indexTwo] = temp;
+    }
+
 }

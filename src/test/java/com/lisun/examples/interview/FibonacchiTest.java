@@ -8,7 +8,7 @@ import org.junit.Test;
  * @since 1/6/14
  *        Time: 3:24 PM
  */
-public class Fibonacchi {
+public class FibonacchiTest {
 
     @Test
     public void shouldReturnNthFibonacciNumber() {

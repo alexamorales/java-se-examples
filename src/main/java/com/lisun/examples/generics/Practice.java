@@ -29,7 +29,6 @@ public class Practice {
     public static <T> void copy(List<? extends T> src, List<? super T> dest) {
         for (T product : src) {
             dest.add(product);
-
         }
     }
 

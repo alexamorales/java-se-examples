@@ -1,6 +1,6 @@
 package com.lisun.examples.sorting;
 
-import static com.lisun.examples.sorting.SortHelper.swap;
+import static com.lisun.examples.sorting.Sort.*;
 
 /**
  * @author Alex
