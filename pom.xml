@@ -6,7 +6,6 @@
     <groupId>com.lisun.examples</groupId>
     <artifactId>examples</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
     <name>Java SE (Samples)</name>
 
     <properties>
