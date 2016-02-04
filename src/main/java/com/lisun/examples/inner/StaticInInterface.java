@@ -5,8 +5,8 @@ package com.lisun.examples.inner;
  */
 public interface StaticInInterface {
 
-    class InnerClassInInterface {
-         void showSmth() {
+     class InnerClassInInterface {
+        static void showSmth() {
             System.out.println("Static class in interface.");
         }
 

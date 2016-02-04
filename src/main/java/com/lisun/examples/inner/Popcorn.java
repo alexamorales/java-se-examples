@@ -6,9 +6,14 @@ package com.lisun.examples.inner;
  * Date: 12/31/13
  * Time: 4:50 PM
  */
-public class Popcorn {
+public class
+Popcorn {
     public void pop() {
         System.out.println("popcorn");
+    }
+
+    public void pop(int a) {
+        System.out.println(a);
     }
 }
 
@@ -25,10 +30,16 @@ class Food {
             public void sizzle() {
                 System.out.println("anonymous sizzling popcorn");
             }
+
+            @Override
+            public void pop(int a) {
+                super.pop(a);
+            }
         };
 
         p.pop();
 
+        p.pop(3);
 
     }
 

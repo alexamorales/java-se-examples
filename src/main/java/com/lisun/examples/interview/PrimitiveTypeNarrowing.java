@@ -10,7 +10,7 @@ public class PrimitiveTypeNarrowing {
 
         // byte 8 -> short 16 -> int 32 -> long 64
         // float 32 -> double 64
-        //everything that lover than int becames int
+        //everything that lover than int becomes int
 
         double a = 5.0;
         double b = 3.0;
