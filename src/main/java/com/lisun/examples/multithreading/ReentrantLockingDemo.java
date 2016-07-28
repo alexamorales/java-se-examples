@@ -24,36 +24,32 @@ public class ReentrantLockingDemo {
     }
 
     private Runnable newRunable() {
-        return new Runnable() {
+        return () -> {
+            do {
+                try {
+                    if (lock.tryLock(500, TimeUnit.MILLISECONDS)) {
+                        try {
+                            System.out.println("locked thread "
+                                    + Thread.currentThread().getName());
 
-            @Override
-            public void run() {
-                do {
-                    try {
-                        if (lock.tryLock(500, TimeUnit.MILLISECONDS)) {
-                            try {
-                                System.out.println("locked thread "
-                                        + Thread.currentThread().getName());
+                            Thread.sleep(1000);
 
-                                Thread.sleep(1000);
+                        } finally {
+                            lock.unlock();
+                            System.out.println("unlocked locked thread "
+                                    + Thread.currentThread().getName());
 
-                            } finally {
-                                lock.unlock();
-                                System.out.println("unlocked locked thread "
-                                        + Thread.currentThread().getName());
-
-                            }
-                            break;
-                        } else {
-                            System.out.println("unable to lock thread "
-                                    + Thread.currentThread().getName()
-                                    + " will re try again");
                         }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        break;
+                    } else {
+                        System.out.println("unable to lock thread "
+                                + Thread.currentThread().getName()
+                                + " will re try again");
                     }
-                } while (true);
-            }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } while (true);
         };
     }
 }

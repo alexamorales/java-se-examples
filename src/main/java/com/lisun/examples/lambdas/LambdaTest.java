@@ -1,9 +1,7 @@
 package com.lisun.examples.lambdas;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
 /**
@@ -14,6 +12,14 @@ import java.util.function.Predicate;
 public class LambdaTest {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("peter", "maria", "mike", "hanna");
+
+        Iterator<String> iterator = names.iterator();
+
+        while (iterator.hasNext()) {
+            String value = iterator.next();
+            System.out.println(value);
+        }
+
 
         names.stream().forEach(a -> a.charAt(1));
 
@@ -57,4 +63,10 @@ public class LambdaTest {
 
 
     }
+
+    public void biConsumerTester(BiConsumer<String, Integer> biConsumer) {
+
+    }
+
+
 }

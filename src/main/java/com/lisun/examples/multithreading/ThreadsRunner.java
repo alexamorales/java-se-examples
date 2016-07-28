@@ -1,5 +1,7 @@
 package com.lisun.examples.multithreading;
 
+import java.util.Optional;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Oleksii.Lisun
@@ -13,7 +15,7 @@ class ThreadRunnable implements Runnable {
         for (int i = 0; i < 10; i++) {
             try {
                 Thread.sleep(1000);
-                System.out.println(Thread.currentThread().getName() + " " + this.getClass().getName() + "i: " + i);
+                System.out.println(Thread.currentThread().getName() + " " + this.getClass().getName() + " i: " + i);
 
                 throw new RuntimeException();
 
@@ -33,7 +35,7 @@ class TestThread extends Thread {
             } catch (InterruptedException e) {
                 System.out.println("Interrupted");
             }
-            System.out.println(Thread.currentThread().getName() + " " + this.getClass().getName() + " i: " + i);
+            System.out.println(Thread.currentThread().getName() + " " + this.getClass().getSimpleName() + " i: " + i);
         }
     }
 }
@@ -44,8 +46,10 @@ public class ThreadsRunner {
 
         Thread thread1 = new Thread(new ThreadRunnable());
         Thread thread2 = new Thread(new ThreadRunnable());
-
-        thread1.setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+        thread1.setUncaughtExceptionHandler((thread, throwable) -> {
+            System.out.println(" Exception in thread: " + thread.getName() + Optional.ofNullable(throwable.getMessage())
+                    .orElse(" In this thread: ") + thread.getName() + " there is no exception.");
+        });
         thread1.start();
         thread1.join();
         thread2.start();

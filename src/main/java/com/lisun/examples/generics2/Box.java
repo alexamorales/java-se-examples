@@ -30,18 +30,32 @@ public class Box<T extends Number> {
         List<? extends Number> objects = new ArrayList<>();
 
 
+        List raw = new ArrayList<>();
+        raw.add(2);
+        raw.add(new Object());
+
 
         List<Integer> objects1 = new ArrayList<>();
         objects1.add(1);
 
+        objects1 = raw;
 
         objects = objects1;
 
         Box<Integer> integerBox = new Box<>();
         integerBox.setT(2);
 
-        integerBox.inspect(3);
+        integerBox.inspect(Integer.valueOf("2"));
 
         System.out.println(integerBox.getT());
+
+        List<? extends Object> list1 = new ArrayList<>();
+
+        List<String> list = new ArrayList<>();
+
+        list.add("string");
+
+        list1 = list;
+
     }
 }

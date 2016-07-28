@@ -7,6 +7,7 @@ package com.lisun.examples.generics;
  * Time: 6:05 PM
  */
 public class Box<T> {
+
     private T t;
 
     public T getT() {

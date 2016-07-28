@@ -19,11 +19,11 @@ public class Practice {
         List<Product> listString = new ArrayList<>();
         raw = list;
 
-
         SomeType<?> rawType = new SomeType();
         rawType.test(listString);
 
-        Practice.copy(list, raw);
+        List<? super Product> parametrizedList = new ArrayList<>();
+        Practice.copy(list, parametrizedList);
     }
 
     public static <T> void copy(List<? extends T> src, List<? super T> dest) {

@@ -38,10 +38,10 @@ public class LocalClassExample {
 
             // Valid in JDK 8 and later:
 
-//            public void printOriginalNumbers() {
-//                System.out.println("Original numbers are " + phoneNumber1 +
-//                    " and " + phoneNumber2);
-//            }
+            public void printOriginalNumbers() {
+                System.out.println("Original numbers are " + phoneNumber1 +
+                    " and " + phoneNumber2);
+            }
         }
 
         PhoneNumber myNumber1 = new PhoneNumber(phoneNumber1);

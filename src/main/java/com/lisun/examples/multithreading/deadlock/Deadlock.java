@@ -34,18 +34,12 @@ public class Deadlock {
         final Friend alphonse = new Friend("Alphonce");
         final Friend gatson = new Friend("Gatson");
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                alphonse.bow(gatson);
-            }
+        new Thread(() -> {
+            alphonse.bow(gatson);
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                gatson.bow(alphonse);
-            }
+        new Thread(() -> {
+            gatson.bow(alphonse);
         }).start();
 
     }

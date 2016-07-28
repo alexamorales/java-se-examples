@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class UsageMyAnnotation {
 
     private static void tryAnnotation() {
-        Class aClass = UsageMyAnnotation.class;
+        Class<UsageMyAnnotation> aClass = UsageMyAnnotation.class;
         Annotation[] annotations = aClass.getAnnotations();
 
         for (Annotation annotation : annotations) {
