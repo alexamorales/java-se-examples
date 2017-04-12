@@ -6,6 +6,9 @@ package com.lisun.examples.proxy;
  * @since 19.10.16
  */
 public interface Interface {
+
     void doSomething();
+
     void somethingElse(String args);
+
 }

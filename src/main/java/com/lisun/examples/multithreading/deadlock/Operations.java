@@ -22,12 +22,8 @@ public class Operations {
 
         CountDownLatch countDownLatch = new CountDownLatch(1);
         ScheduledExecutorService exe = Executors.newScheduledThreadPool(1);
-        exe.scheduleAtFixedRate(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Number of fails: " + acc1.getFailCounter());
-            }
-        }, 3, 1, TimeUnit.SECONDS);
+        exe.scheduleAtFixedRate(() ->
+                System.out.println("Number of fails: " + acc1.getFailCounter()), 3, 1, TimeUnit.SECONDS);
 
         ExecutorService service = Executors.newFixedThreadPool(3);
         final boolean[] arr = new boolean[SIZE];

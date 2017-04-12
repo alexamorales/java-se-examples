@@ -7,7 +7,7 @@ package com.lisun.examples.inner;
 
 public class LocalClassExample {
 
-    static String regularExpression = "[^0-9]";
+    private static String regularExpression = "[^0-9]";
 
     public static void validatePhoneNumber(
             String phoneNumber1, String phoneNumber2) {

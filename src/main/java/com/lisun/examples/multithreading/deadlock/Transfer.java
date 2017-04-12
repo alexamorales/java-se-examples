@@ -32,6 +32,7 @@ public class Transfer implements Callable<Boolean> {
     @Override
     public Boolean call() throws InsufficientFundsException, InterruptedException {
         System.out.println("Waiting to start");
+
         startLatch.await();
         if (accountFrom.getLock().tryLock(WAIT_SEC, TimeUnit.SECONDS)) {
             System.out.println("Start transfer with id: " + id);
